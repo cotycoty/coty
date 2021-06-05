@@ -1,0 +1,31 @@
+@charset "utf-8";
+:root{
+	--c1:#efeeb4;
+	--c2:#dad873;
+	--c3:#58b368;
+	--c4:#309975;
+	--c5:#454d66;
+}
+
+.content{
+	overflow:hidden;
+	background-image:linear-gradient(145deg,var(--c5) 0px,var(--c4) 10px,var(--c3) 14px,var(--c2) 17px,var(--c1) 30px,white 10%);
+	border-right:2px solid var(--c1);
+	/* box-shadow:5px 5px 5px var(--c1); */
+	/* border-radius:1px 10px 10px 10px; */
+	
+}
+
+/* 利用伪元素实现毛玻璃效果 */
+/* .content::before{ */
+	/* background-image:url("../img/css/1.jpg"); */
+	/* top:0; */
+	/* bottom:0; */
+	/* left:0; */
+	/* right:0; */
+	/* position:absolute; */
+	/* content:""; */
+	/* z-index:0; */
+	/* filter:blur(5px); */
+	/* visibility:0.5; */
+/* } */

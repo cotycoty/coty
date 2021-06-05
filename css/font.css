@@ -1,0 +1,43 @@
+@charset "UTF-8";
+:root{
+	--fc1:#666666;
+	--fc2:#f3bda1;
+	--fc3:#687980;
+	--fc4:#02475e;
+	--fs1:1em;
+	--fs2:2em;
+	--fs3:5em;
+}
+*{
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	font-size:var(--fs1);
+	/* line-height: */
+	font-family:Tahoma,Geneva,sans-serif;
+	color:var(--fc1);
+}
+.title{
+	font-weight:border;
+	font-size:var(--fs3);
+	/* line-height: */
+}
+.content h2{
+	font-size:var(--fs2);
+}
+a{
+	text-decoration-line:none;
+	font-weight:bolder;
+}
+a:link{
+	color:var(--fc2);
+}
+a:visited{
+	color:var(--fc3);
+}
+a:hover{
+	color:var(--fc4);
+}
+/* a:active{ */
+	/* color:var(--fc2); */
+/* } */
