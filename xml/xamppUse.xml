@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<cdata>
+<![CDATA[
+<h1 class="title">本地网站使用xampp配置</h1>
+
+
+<div class="navBar">
+<a href="#1">配置</a>
+<a href="#2">常见问题</a>
+<a href="#2-1">&nbsp;&nbsp;&nbsp;&nbsp;80端口被占用</a>
+<a href="#2-2">&nbsp;&nbsp;&nbsp;&nbsp;配置多网站多端口</a>
+
+</div>
+
+
+<div class="content 1">
+<h2 id="1">本地网站使用xampp配置</h2>
+<a href="">‪E:\archives\download\xamppv8.0.6.exe</a>
+
+
+
+</div>
+
+
+<div class="content 2">
+<h2 id="2">常见问题</h2>
+
+
+
+</div>
+
+
+<div class="content 3">
+<h2 id="2-1">80端口被占用</h2>
+<p>80端口被占用可按如下方法解决:</p>
+<img src="../img/xamppUse/1.png"></img>
+<p>Config&gt;Apache(httpd.conf)将80端口修改为别的端口</p>
+<img src="../img/xamppUse/2.png"></img>
+<p>Config&gt;Apache(httpd-ssl.conf)同样修改掉</p>
+<img src="../img/xamppUse/3.png"></img>
+<p>最后重新启动服务</p>
+
+
+
+</div>
+
+
+<div class="content 4">
+<h2 id="2-2">配置多网站多端口</h2>
+<p>修改host文件C:/WINDOWS/system32/drivers/etc/hosts,
+在后面加上"127.0.0.1  &nbsp;&nbsp;&nbsp;&nbsp;  mySite"=="本地ip&nbsp;&nbsp;&nbsp;&nbsp;网址名"</p>
+<img src="../img/xamppUse/4.png"></img>
+<p>打开Config&gt;Apache(httpd.conf),
+在顶端加上端口设置</p>
+<img src="../img/xamppUse/5.png"></img>
+<p>再添加虚拟网站</p>
+<img src="../img/xamppUse/6.png"></img>
+<pre class="code">
+&lt;VirtualHost *:80>
+	DocumentRoot  D:\myWeb
+	ServerName cc
+&lt;/VirtualHost>
+
+&lt;VirtualHost *:233>
+	DocumentRoot  E:\desktop\html
+	ServerName mySite
+&lt;/VirtualHost>
+</pre>
+<p>最后之前还需要配置访问权限,
+不然就会出现以下情况:</p>
+<img src="../img/xamppUse/7.png"></img>
+<p>在前一步的文件里添加:</p>
+<img src="../img/xamppUse/8.png"></img>
+<p>#号后面是注释,AllowOverride All可以不加</p>
+<pre class="code">
+&lt;Directory "D:\myWeb">
+    #AllowOverride All
+    Require all granted
+&lt;/Directory>
+
+&lt;Directory "E:\desktop\html">
+    #AllowOverride All
+    Require all granted
+&lt;/Directory>
+</pre>
+<p>最后重启xampp
+就能通过cc(默认80端口不用加上)和mySite:233访问了
+默认访问文件夹中的index.html和index.php</p>
+
+
+
+
+</div>
+
+]]>
+</cdata>
+</root>
