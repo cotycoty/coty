@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8"/>
+	<style type="text/css" rel="stylesheet">
+		*{word-wrap:break-word;}
+	</style>
+	</head>
+	<body>
+	<h1>斐波拉契数</h1>
+	<div class="exhibitionBoard"></div>
+	<button onclick="button_()">添加</button>
+	
+
+	</body>
+</html>
+<script type="text/javascript" src="../js/init.js"></script>
+<script type="text/javascript">
+function sequence_(menber){
+	this.menber=menber;
+	this.record=[menber,menber];
+	this.plus=plus;
+	this.plus_X_n=plus_X_n;
+	
+	function plus(){
+		this.menber+=this.record[this.record.length-2];
+		this.record.push(this.menber);
+	}
+	function plus_X_n(n){
+		for(var i=0;i<n;i++){//这里用let解决异步问题
+				this.plus();			
+		}
+	}
+}
+
+var seq_=new sequence_(1);//不new的话返回的是window对象
+var exBoard_=document.getElementsByClassName("exhibitionBoard")[0];
+exBoard_.innerHTML=1;
+function button_(){
+	seq_.plus_X_n(100);
+	exBoard_.innerHTML="";
+	var i=0;
+	for(menber of seq_.record){
+		menber=menber.toString();
+		if(i%5==0){exBoard_.innerHTML+="<br/>";}
+		exBoard_.innerHTML+=menber+"&nbsp;&nbsp;".repeat(30-menber.length);//&nbsp;空格字符只有半个数字字符宽
+		i++;
+	}
+}
+</script>

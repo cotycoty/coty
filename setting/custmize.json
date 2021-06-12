@@ -1,0 +1,34 @@
+{
+"使用规范":{
+		"1":"同级键值对之间用','隔开",
+		"2":"地址需要在前面带一个/"
+	},
+	
+	
+	
+"title":{
+	"homepage":"coty.ink",
+	"icon":"/setting/img/icon/64.ico"
+	},
+
+
+
+
+"path":{
+	"custmize.json":"/setting/custmize.json",
+	"xml2html.js":"/setting/js/xml2html.js",
+	"varFactory.js":"/setting/js/varFactory.js",
+	"font.css":"/setting/css/font.css",
+	"content.css":"/setting/css/content.css",
+	"colorShape.css":"/setting/css/colorShape.css",
+	"init.js":"/js/init.js",
+	"content.js":"/js/content.js",
+	"index.js":"/js/index.js",
+	"loading_index.css":"/setting/css/loading_index.css",
+	"topBar.css":"/setting/css/topBar.css"
+}
+	
+	
+	
+	
+}
