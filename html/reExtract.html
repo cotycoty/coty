@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<style type="text/css">
+		textarea{
+			width:100%;
+			height:200px;
+			resize: none;
+		}
+		#RE{
+			width:500px;
+			height:auto;
+		}
+		#result{
+			width:100%;
+			word-break:break-all;
+			<!-- word-wrap:break-word; -->
+		}
+		</style>
+	</head>
+	<body>
+		<span>粘贴字符串</span><textarea id="string"></textarea><br/>
+		<span>填入正则表达式</span><input id="RE"></input><br/>
+		<button id="button" onclick="reExtract_()">extract</button>
+		<span>结果:</span><br/><span id="result"></span>
+		<table id="table" border="1px"></table>
+	</body>
+</html>
+
+<!-- <script type="text/javascript" src="./js/init.js"></script> -->
+
+<script type="text/javascript">
+function reExtract_(){
+	var str=document.getElementById("string").value;
+	var RE=document.getElementById("RE").value;
+	if(str!=null&&RE!=null&&str!=""&&RE!=""){
+		RE=RE.split(",");
+		var reArr={};
+		var result=document.getElementById("result");
+		var table=document.getElementById("table")
+		result.innerHTML="";
+		for( i of RE){
+			reArr[i]=find_(str,i);
+			if(reArr[i]==null){reArr[i]=["undefined"];}
+			result.innerHTML+=i+":<br/><br/>"+reArr[i]+"<br/><br/><br/>";
+		}
+		var text="";
+		var length=0;
+		for(i of RE){
+			length=(reArr[i].length>length)?reArr[i].length:length;
+		}
+		for(var i=0;i<length;i++){
+			text+='<tr>'+'<th>'+(i+1)+'</th>';
+			for(j of RE){
+				text+='<th>'+reArr[j][i]+'</th>';
+			}
+			text+='</tr>';
+		}
+		table.innerHTML=text;
+	}
+	
+
+}
+function find_(str,RE){
+	return str.match(eval(RE));
+}
+
+
+
+</script>

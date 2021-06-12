@@ -1,0 +1,13 @@
+@charset "UTF-8";
+@import "./var.css";
+*{
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	font-size:var(--fs1);
+	/* line-height: */
+	font-family:Tahoma,Geneva,sans-serif;
+}
+a{
+	text-decoration:none;
+}
