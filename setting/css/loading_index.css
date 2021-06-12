@@ -7,7 +7,7 @@
 	left:0;
 	height:100%;
 	width:100%;
-	background-color:var(--c1);
+	background-color:var(--c0);
 	z-index:5;
 }
 .loading::before{
