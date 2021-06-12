@@ -16,8 +16,8 @@ addCss(currentDomain+getVar("path","font.css"));
 // };
 // repeatedGreetings();
 
-// 等待3秒后关闭
-setTimeout(() => document.getElementsByClassName("loading")[0].setAttribute("style","display:none"), 3000);
+// 等待页面加载完成1秒后关闭
+window.onload=()=>setTimeout(() => document.getElementsByClassName("loading")[0].setAttribute("style","display:none"), 1000);
 
 
 
