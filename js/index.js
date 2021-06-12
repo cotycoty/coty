@@ -17,7 +17,7 @@ addCss(currentDomain+getVar("path","font.css"));
 // repeatedGreetings();
 
 // 等待3秒后关闭
-setTimeout(() => document.getElementsByClassName("loading")[0].setAttribute("style","display:none"), 0);
+setTimeout(() => document.getElementsByClassName("loading")[0].setAttribute("style","display:none"), 3);
 
 
 
